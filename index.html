@@ -1,103 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Title</title>
-    </head>
-    <body></body>
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bec Gibson — Digital Media Portfolio</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      line-height: 1.6;
-    }
-    header {
-      background: #333;
-      color: #fff;
-      padding: 1rem;
-      text-align: center;
-    }
-    nav {
-      background: #444;
-    }
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    nav ul li {
-      margin: 0.5rem;
-    }
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      background: #555;
-      border-radius: 4px;
-      transition: background 0.3s;
-    }
-    nav ul li a:hover {
-      background: #666;
-    }
-    main {
-      padding: 2rem;
-    }
-    section {
-      margin-bottom: 2rem;
-    }
-    footer {
-      background: #333;
-      color: #fff;
-      text-align: center;
-      padding: 1rem;
-    }
+    :root{--accent:#0b76d1;--bg:#f8f9fb;--card:#ffffff;--muted:#666}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, Roboto, Arial, sans-serif;background:var(--bg);color:#111}
+    header{background:linear-gradient(90deg,var(--accent),#0b5aa0);color:#fff;padding:2rem 1rem;text-align:center}
+    header .meta{max-width:900px;margin:0 auto}
+    nav{background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+    .nav-inner{max-width:1100px;margin:0 auto;padding:.75rem 1rem;display:flex;gap:1rem;align-items:center;justify-content:space-between}
+    .brand{font-weight:700}
+    .nav-links{display:flex;gap:.4rem;flex-wrap:wrap}
+    .nav-links a{padding:.45rem .7rem;border-radius:6px;text-decoration:none;color:var(--accent);font-weight:600}
+    .nav-links a:hover{background:rgba(11,118,209,.08)}
+    main{max-width:1100px;margin:2rem auto;padding:0 1rem}
+    .hero{display:grid;grid-template-columns:1fr 320px;gap:1.5rem;align-items:center}
+    .card{background:var(--card);padding:1rem;border-radius:12px;box-shadow:0 6px 18px rgba(16,24,40,.04)}
+    .artist-statement{line-height:1.55}
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-top:1rem}
+    .project-tile{padding:1rem;border-radius:10px;border:1px solid rgba(16,24,40,.04);background:linear-gradient(180deg,rgba(255,255,255,.95),rgba(250,250,252,.95))}
+    h2,h3{margin:0 0 .5rem 0}
+    section.project{margin-top:2rem}
+    .meta-row{font-size:.95rem;color:var(--muted);margin-bottom:.5rem}
+    .process-steps{display:flex;gap:.5rem;flex-wrap:wrap}
+    .process-steps img{width:100%;height:auto;border-radius:6px;display:block}
+    .two-col{display:grid;grid-template-columns:1fr 420px;gap:1rem}
+    footer{padding:1.25rem;background:#0b1220;color:#fff;text-align:center;margin-top:2rem}
+    @media (max-width:880px){.hero{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}}
+    /* accessibility helpers */
+    .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip-link:focus{left:1rem;top:1rem;width:auto;height:auto;padding:.5rem;background:#000;color:#fff;border-radius:4px}
   </style>
 </head>
 <body>
+  <aside class="sidebar" style="position:fixed;left:0;top:0;height:100vh;width:220px;background:#0b1220;color:white;padding:1rem;display:flex;flex-direction:column;gap:.75rem;z-index:9999;">
+    <h2 style="font-size:1.1rem;margin:0 0 .5rem 0;">Projects</h2>
+    <a href="#pixelated" style="color:white;text-decoration:none;">Pixelated</a>
+    <a href="#bad-photoshop" style="color:white;text-decoration:none;">Bad Photoshop</a>
+    <a href="#perfect-mask" style="color:white;text-decoration:none;">Perfect Mask</a>
+    <a href="#animated-gifs" style="color:white;text-decoration:none;">Animated GIFs</a>
+    <a href="#glitch-grit" style="color:white;text-decoration:none;">Glitch & Grit</a>
+    <a href="#p5js" style="color:white;text-decoration:none;">p5.js Work</a>
+    <a href="#what-if" style="color:white;text-decoration:none;">What If</a>
+  </aside>
+  <div style="margin-left:240px;">
+  <a class="skip-link" href="#main">Skip to main content</a>
   <header>
-    <h1>My Portfolio</h1>
-    <p>Showcasing my projects and work</p>
+    <div class="meta">
+      <h1>Bec Gibson</h1>
+      <p class="meta-row">[Course Title] — [Semester]</p>
+      <p style="max-width:800px;margin:0.5rem auto">A digital media portfolio showcasing projects, process, and reflections created during the semester. Use the navigation below to jump to each project.</p>
+    </div>
   </header>
 
-  <nav>
-    <ul>
-      <li><a href="#pixelated">Pixelated</a></li>
-      <li><a href="#bad-photoshop">Bad Photoshop</a></li>
-      <li><a href="#perfect-mask">Perfect Mask</a></li>
-      <li><a href="#animated-gifs">Project 4</a></li>
-      <li><a href="#glitch-n-grit">Project 5</a></li>
-      <li><a href="#p5-js">Project 6</a></li>
-      <li><a href="#what-if">Project 7</a></li>
-    </ul>
+  <nav aria-label="Primary">
+    <div class="nav-inner">
+      <div class="brand">Portfolio</div>
+      <div class="nav-links" role="navigation">
+        <a href="#pixelated">Pixelated</a>
+        <a href="#bad-photoshop">Bad Photoshop</a>
+        <a href="#perfect-mask">Perfect Mask</a>
+        <a href="#animated-gifs">Animated GIFs</a>
+        <a href="#glitch-grit">Glitch &amp; Grit</a>
+        <a href="#p5js">p5.js Work</a>
+        <a href="#what-if">What If</a>
+      </div>
+    </div>
   </nav>
 
-  <main>
-    <section id="project1">
-      <h2>Project 1</h2>
-      <p>Description of project 1.</p>
+  <main id="main">
+    <section class="hero">
+      <div class="card">
+        <h2>Artist Statement &amp; Introduction</h2>
+        <p class="artist-statement">I approach digital media as a conversation between intention and accident. Over the semester I explored how algorithmic tools, intentional mark-making, and deliberate constraints can produce work that is both technically informed and emotionally resonant. I study how limitations — a restricted color palette, pixel grids, or the one-second GIF loop — can sharpen decisions and make composition and timing feel purposeful. My practice combines image-based experiments with code-driven sketches, and I enjoy shifting between rapid prototyping and careful refinement. Through iterative play I learned to read tools as collaborators: pixel manipulation taught me patience, masking exercises taught me precision, and p5.js sketches taught me how to make visuals respond to simple logic. This portfolio collects the artefacts of that process: thumbnails, process images, short reflections, and final pieces. Each project shows a facet of what I learned technically (selection, compositing, masking, animation, and coding) and creatively (visual rhythm, surprise, and narrative compression).</p>
+      </div>
+
+      <aside class="card">
+        <h3>Quick Links</h3>
+        <ul>
+          <li>Published GitHub Pages URL: <em>https://rag72.github.io/igoveup/</em><em>(add your GitHub Pages URL here)</em><em>add your URL here</em></li>
+          <li>Zipped backup on Google Drive: <a href="https://drive.google.com/drive/folders/1op3g9bqDJ3ffJnHX9ppwwgMrlKCAkA16?usp=sharing">Google Drive Folder</a><em>add link here</em></li>
+          <li>Contact: <em>your.email@example.com</em></li>
+        </ul>
+      </aside>
     </section>
 
-    <section id="project2">
-      <h2>Project 2</h2>
-      <p>Description of project 2.</p>
+    <section class="projects-grid" aria-label="Project overview">
+      <article class="project-tile">
+        <h3>Pixelated</h3>
+        <p>Artifacts &amp; notes from pixel-focused image experiments.</p>
+        <a href="#pixelated">Open</a>
+      </article>
+      <article class="project-tile">
+        <h3>Bad Photoshop</h3>
+        <p>Intentional collage and deliberate 'bad' edits.</p>
+        <a href="#bad-photoshop">Open</a>
+      </article>
+      <article class="project-tile">
+        <h3>Perfect Mask</h3>
+        <p>Masking practice and compositing precision.</p>
+        <a href="#perfect-mask">Open</a>
+      </article>
+      <article class="project-tile">
+        <h3>Animated GIFs</h3>
+        <p>Looping motion studies and timing experiments.</p>
+        <a href="#animated-gifs">Open</a>
+      </article>
+      <article class="project-tile">
+        <h3>Glitch &amp; Grit</h3>
+        <p>Noise, data-bending, and texture-focused pieces.</p>
+        <a href="#glitch-grit">Open</a>
+      </article>
+      <article class="project-tile">
+        <h3>p5.js Landscape &amp; Self Portrait</h3>
+        <p>Interactive sketches and generative portrait.</p>
+        <a href="#p5js">Open</a>
+      </article>
+      <article class="project-tile">
+        <h3>What If</h3>
+        <p>Speculative reworking and alternate-version project.</p>
+        <a href="#what-if">Open</a>
+      </article>
     </section>
 
-    <!-- Repeat sections for projects 3–10 -->
+    <!-- Pixelated -->
+    <section id="pixelated" class="project card project">
+      <h2>Pixelated</h2>
+      <p class="meta-row">A set of artifacts exploring low-resolution aesthetics, color quantization, and grid-based composition.</p>
+      <div class="two-col">
+        <div>
+          <h3>Technical Notes</h3>
+          <ul>
+            <li>Tools: Photoshop, GIMP, ImageMagick (for batch downsampling), browser-based color-quantizer</li>
+            <li>Formats: PNG, optimized for web</li>
+          </ul>
+
+          <h3>Process Documentation</h3>
+          <div class="process-steps">
+            <img src="images/pixelated-step1.jpg" alt="Screenshot: original photo before downsampling (replace with your image)">
+            <img src="images/pixelated-step2.jpg" alt="Screenshot: reduced-color and enlarged pixel grid (replace with your image)">
+          </div>
+
+          <h3>Reflection</h3>
+          <p>Reducing images to a strict pixel grid taught me to think about which details actually read at small sizes. The constraint of a low-resolution canvas forced me to exaggerate key shapes and choose color contrasts that would survive aggressive quantization. Technically, I learned batch workflows in ImageMagick to automate downsampling and experimented with dithering options to create texture without adding complexity. Creatively, the project was about restraint — removing information until only the most important visual signals remained. I also tested different export sizes and compression settings to balance clarity and file size.</p>
+        </div>
+
+        <aside>
+          <h3>Final Work</h3>
+          <p><a href="https://drive.google.com/drive/folders/1op3g9bqDJ3ffJnHX9ppwwgMrlKCAkA16?usp=sharing">Project Folder</a></p><img src="images/pixelated-final.jpg" alt="Final pixelated composition (replace with your final image)" style="width:100%;border-radius:8px;margin-top:.5rem">
+        </aside>
+      </div>
+    </section>
+
+    <!-- Bad Photoshop -->
+    <section id="bad-photoshop" class="project card project">
+      <h2>Bad Photoshop</h2>
+      <p class="meta-row">An exercise in deliberate poor editing and playful collage — embracing odd proportions, mismatched lighting, and absurd compositions.</p>
+      <div class="two-col">
+        <div>
+          <h3>Technical Notes</h3>
+          <ul>
+            <li>Tools: Adobe Photoshop (or Photopea), layer blending modes, basic selection tools</li>
+            <li>Formats: JPEG/PNG — optimized GIF for animated variants</li>
+          </ul>
+
+          <h3>Process Documentation</h3>
+          <div class="process-steps">
+            <img src="images/bad-ps-step1.jpg" alt="Layered collage mockup (replace with your image)">
+            <img src="images/bad-ps-step2.jpg" alt="Intentional mismatch of scale and lighting (replace with your image)">
+          </div>
+
+          <h3>Reflection</h3>
+          <p>I intentionally broke conventional rules of compositing — ignoring consistent light source, scale, and perspective — to produce work that reads as humorous and uncanny. The biggest challenge was resisting the impulse to 'fix' things; instead I leaned into mismatches and used them as a compositional element. I learned to use quick layer masks and transform tools to juxtapose elements at odd scales. This project highlighted how deliberate errors can communicate voice and personality, and how technical lifts (like fast masking) let me rapidly iterate through more playful options.</p>
+        </div>
+
+        <aside>
+          <h3>Final Work</h3>
+          <p><a href="https://drive.google.com/drive/folders/1_GSqMNMtNfoWhYoT9O5ryhyYh6m60fqE?usp=share_link">Project Folder</a></p><img src="images/bad-ps-final.jpg" alt="Final bad photoshop composition (replace)">
+        </aside>
+      </div>
+    </section>
+
+    <!-- Perfect Mask -->
+    <section id="perfect-mask" class="project card project">
+      <h2>Perfect Mask</h2>
+      <p class="meta-row">Practicing precision in masking and compositing to create believable merges between foreground and background.</p>
+      <div class="two-col">
+        <div>
+          <h3>Technical Notes</h3>
+          <ul>
+            <li>Tools: Photoshop (Pen tool, Select &amp; Mask), Photopea alternative, tablet for detailed selections</li>
+            <li>Techniques: feathering, edge refining, color-matching with adjustment layers</li>
+          </ul>
+
+          <h3>Process Documentation</h3>
+          <div class="process-steps">
+            <img src="images/mask-step1.jpg" alt="Raw subject photo before masking (replace)">
+            <img src="images/mask-step2.jpg" alt="Refined selection and edge smoothing (replace)">
+          </div>
+
+          <h3>Reflection</h3>
+          <p>Masking is a deceptively complex skill: small edge artifacts can break the illusion of a composite. I practiced multiple selection methods and learned when to trade speed for precision (quick extract vs. pen tool). Color matching with curves and selective color adjustments was essential to sell the subject in a new environment. A key challenge was dealing with hair and semi-transparent edges; using layered masks and painting subtle density changes helped greatly. This project improved my patience and attention to micro-detail in compositing.</p>
+        </div>
+
+        <aside>
+          <h3>Final Work</h3>
+          <p><a href="https://drive.google.com/drive/folders/1WPTeFHrU_klfAUQfhmDg30VkZ3ZckaOs?usp=share_link">Project Folder</a></p><img src="images/mask-final.jpg" alt="Final composite using refined masking (replace)" style="width:100%;border-radius:8px;margin-top:.5rem">
+        </aside>
+      </div>
+    </section>
+
+    <!-- Animated GIFs -->
+    <section id="animated-gifs" class="project card project">
+      <h2>Animated GIFs</h2>
+      <p class="meta-row">Short looping animations exploring timing, economy of motion, and visual rhythm.</p>
+      <div class="two-col">
+        <div>
+          <h3>Technical Notes</h3>
+          <ul>
+            <li>Tools: Photoshop timeline, After Effects (for complex easing), ezGIF or ImageMagick for optimization</li>
+            <li>Export: GIF optimized with limited palette and frame disposal settings</li>
+          </ul>
+
+          <h3>Process Documentation</h3>
+          <div class="process-steps">
+            <img src="images/gif-step1.jpg" alt="Storyboard or keyframes for GIF (replace)">
+            <img src="images/gif-step2.jpg" alt="Export settings and palette optimization (replace)">
+          </div>
+
+          <h3>Reflection</h3>
+          <p>Making effective GIFs meant thinking in loops and negative space: what motion repeats, and what surprises on each cycle. I practiced paring down motion so that the loop reads cleanly at a glance. A technical hurdle was balancing frame rate, length, and palette size to keep file sizes small while maintaining visual clarity. I used dithering selectively to suggest color depth and tested different frame disposal methods to create smooth transitions. The project sharpened my sense of timing and compressed storytelling.</p>
+        </div>
+
+        <aside>
+          <h3>Final Work</h3>
+          <p><a href="https://drive.google.com/drive/folders/1cqvvzFITF2zUKt0NGmFWSzgMH3uW8ToR?usp=share_link">Project Folder</a></p><img src="images/gif-final.gif" alt="Final animated GIF (replace with your optimized GIF)" style="width:100%;border-radius:8px;margin-top:.5rem">
+        </aside>
+      </div>
+    </section>
+
+    <!-- Glitch & Grit -->
+    <section id="glitch-grit" class="project card project">
+      <h2>Glitch &amp; Grit</h2>
+      <p class="meta-row">A launch page into experimental glitching techniques and texture generation.</p>
+      <div>
+        <h3>About</h3>
+        <p>This page links into interactive or full-resolution glitch experiments. Methods include databending (opening images as raw data and altering bytes), shader-based noise, and layered scanline textures.</p>
+
+        <h3>Technical Notes</h3>
+        <ul>
+          <li>Tools: Audacity (for databending), Processing, custom GLSL shaders, Photoshop for layering textures</li>
+          <li>Notes: some glitch methods intentionally corrupt files — keep backups of originals.</li>
+        </ul>
+
+        <h3>Launch Project</h3>
+        <p><em>Replace the link below with your project URL or embed code.</em></p>
+        <p><a href="https://drive.google.com/drive/folders/1re8UpocRjM1i6hjv0yNqVfuy_KDulNSR?usp=share_link">Open Glitch & Grit Folder</a></a></p>
+
+        <h3>Reflection</h3>
+        <p>Glitching taught me to accept unpredictability as a generative force. I learned safe workflows for corrupting copies, and how to curate accidental results into compositions. The challenge was translating chaotic artifacts into readable image elements — identifying which distortions add expression and which are merely noise. This project pushed my tolerance for surprise and improved my ability to iterate quickly while keeping originals intact.</p>
+      </div>
+    </section>
+
+    <!-- p5.js -->
+    <section id="p5js" class="project card project">
+      <h2>p5.js Landscape &amp; Self Portrait</h2>
+      <p class="meta-row">Generative landscape and a code-driven self-portrait using p5.js.</p>
+      <div class="two-col">
+        <div>
+          <h3>Technical Notes</h3>
+          <ul>
+            <li>Tools: p5.js, VS Code, Chrome/Firefox for testing</li>
+            <li>Techniques: noise(), perlin noise-based terrain, simple particle systems, color interpolation</li>
+          </ul>
+
+          <h3>Process Documentation</h3>
+          <div class="process-steps">
+            <img src="images/p5-step1.png" alt="Sketching code and algorithm notes (replace)">
+            <img src="images/p5-step2.png" alt="Screenshot of iterative sketch runs (replace)">
+          </div>
+
+          <h3>Reflection</h3>
+          <p>Working in code required translating visual intuition into rules. Building the landscape was iterative: I tuned noise scales, palette interpolations, and layering to create depth. The self-portrait used simple shapes and mapped facial features to variables to allow generative variation. Challenges included debugging animation stutter and managing canvas resizing for different screens. The biggest learning was that small changes to parameters can dramatically shift mood; documenting those parameter choices helped me reproduce pleasing variations.</p>
+        </div>
+
+        <aside>
+          <h3>Final Work — Embedded Sketch</h3>
+          <p>Below is a placeholder iframe — replace the src with your published p5.js sketch (for example, a GitHub Pages URL or an open editor link).</p>
+          <iframe src="https://your-p5js-sketch-url.example" title="p5.js sketch placeholder" style="width:100%;height:320px;border-radius:8px;border:1px solid rgba(0,0,0,.08)"></iframe>
+        </aside>
+      </div>
+    </section>
+
+    <!-- What If -->
+    <section id="what-if" class="project card project">
+      <h2>What If</h2>
+      <p class="meta-row">A speculative project: reimagining a familiar image with alternate constraints.</p>
+      <div class="two-col">
+        <div>
+          <h3>Technical Notes</h3>
+          <ul>
+            <li>Tools: Photoshop, p5.js for variant generation, export to PNG</li>
+            <li>Approach: apply a single constraint (e.g., single hue, extreme aspect ratio, or motion-only edits) and iterate</li>
+          </ul>
+
+          <h3>Process Documentation</h3>
+          <div class="process-steps">
+            <img src="images/whatif-step1.jpg" alt="Initial concept sketches and constraint notes (replace)">
+            <img src="images/whatif-step2.jpg" alt="Alternate versions explored (replace)">
+          </div>
+
+          <h3>Reflection</h3>
+          <p>What If asked me to reframe an image by applying a strict constraint. This made composition decisions clearer: once a single rule was in place, I could quickly reject or accept variations. I learned to use small scripts to batch-produce variants (useful when testing many possibilities) and to curate the strongest outcomes into a final series. The creative choice to work within a limit helped me discover surprising visual solutions that would not have emerged from an unconstrained approach.</p>
+        </div>
+
+        <aside>
+          <h3>Final Work</h3>
+          <p><a href="https://drive.google.com/drive/folders/1op3g9bqDJ3ffJnHX9ppwwgMrlKCAkA16?usp=sharing">Project Folder</a></p><img src="images/whatif-final.jpg" alt="Final What If composition (replace)" style="width:100%;border-radius:8px;margin-top:.5rem">
+        </aside>
+      </div>
+    </section>
+
+    <footer style="margin-top:2rem">
+      <p style="font-size:.95rem">Attribution: This portfolio template and content is © Bec Gibson 2025. Licensed under Creative Commons — CC BY-NC-SA 4.0. Replace with desired license or copyright notice.</p>
+      <p style="font-size:.85rem;color:var(--muted)">Accessibility notes: images include alt text placeholders. Replace images in the <code>images/</code> folder and update paths as needed. All tags are closed and semantic elements used for better navigation.</p>
+    </footer>
   </main>
+  </div>
 
-  <footer>
-    <p>&copy; 2025 My Portfolio</p>
-  </footer>
 </body>
 </html>
